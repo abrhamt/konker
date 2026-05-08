@@ -1,0 +1,52 @@
+groups:
+
+- name: konker-alerts
+
+rules:
+
+- alert: BackendDown
+
+expr: up{job="backend"} == 0
+
+for: 1m
+
+labels:
+
+severity: critical
+
+annotations:
+
+summary: "Backend service down"
+
+
+description: "Backend at {{ $labels.instance }} is down for over 1 minute."
+
+- alert: HighLatency
+
+expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2
+
+for: 2m
+
+labels:
+
+severity: warning
+
+annotations:
+
+summary: "High request latency"
+
+description: "95th percentile latency > 2s"
+
+- alert: GameRoomSpike
+
+expr: rate(active_rooms_total[5m]) > 100
+
+for: 1m
+
+labels:
+
+severity: warning
+
+annotations:
+
+summary: "Rapid room creation"

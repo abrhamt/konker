@@ -1,0 +1,29 @@
+{
+
+"title": "Konker Overview",
+
+"panels": [
+
+{
+
+"type": "stat",
+
+"title": "Active Games",
+
+"targets": [{ "expr": "active_games_total" }]
+
+},
+
+{
+
+"type": "graph",
+
+"title": "Socket Connections",
+
+"targets": [{ "expr": "socket_connections_total" }]
+
+}
+
+]
+
+}

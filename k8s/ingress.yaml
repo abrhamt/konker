@@ -1,0 +1,105 @@
+# =============================================
+
+# KONKER – Ingress (NGINX)
+
+
+# Generated: November 12, 2025 12:24 AM EAT
+
+# =============================================
+
+apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+
+metadata:
+
+name: konker-ingress
+
+namespace: konker
+
+annotations:
+
+nginx.ingress.kubernetes.io/ssl-redirect: "true"
+
+nginx.ingress.kubernetes.io/use-proxy-protocol: "true"
+
+cert-manager.io/cluster-issuer: "letsencrypt-prod"
+
+spec:
+
+ingressClassName: nginx
+
+tls:
+
+- hosts:
+- konker.et
+
+secretName: konker-tls
+
+rules:
+
+- host: konker.et
+
+[http:](http:)
+
+paths:
+
+- path: /
+
+pathType: Prefix
+
+
+backend:
+
+service:
+
+name: konker-frontend
+
+port:
+
+number: 80
+
+- path: /socket.io
+
+pathType: Prefix
+
+backend:
+
+service:
+
+name: konker-backend
+
+port:
+
+number: 3001
+
+Generating next 19 files...
+
+Next Batch (31–40):
+
+docs/architecture.md
+
+docs/api.md
+
+docs/deployment.md
+
+docs/monitoring.md
+
+docs/backup-restore.md
+
+README.md
+
+CONTRIBUTING.md
+
+
+## LICENSE
+
+package.json (root)
+
+turbo.json
+
+Shall I continue with File 31 / 49 (docs/architecture.md)?
+
+Reply: Continue
+
+Continue

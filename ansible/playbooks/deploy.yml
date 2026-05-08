@@ -1,0 +1,91 @@
+# =============================================
+
+# KONKER – Ansible Deploy
+
+
+# Generated: November 12, 2025 12:24 AM EAT
+
+# =============================================
+
+## ---
+
+- name: Deploy Konker Stack
+
+hosts: konker_servers
+
+become: yes
+
+vars:
+
+app_dir: /opt/konker
+
+docker_compose_version: "2.24.0"
+
+tasks:
+
+- name: Install Docker
+
+apt:
+
+name:
+
+- docker.io
+- docker-compose-plugin
+
+state: present
+
+update_cache: yes
+
+- name: Create app directory
+
+file:
+
+path: "{{ app_dir }}"
+
+state: directory
+
+
+mode: '0755'
+
+- name: Copy docker-compose.yml
+
+copy:
+
+src: ../docker-compose.yml
+
+dest: "{{ app_dir }}/docker-compose.yml"
+
+mode: '0644'
+
+- name: Copy .env
+
+template:
+
+src: ../.env.j2
+
+dest: "{{ app_dir }}/.env"
+
+mode: '0600'
+
+- name: Deploy with Docker Compose
+
+community.docker.docker_compose:
+
+project_src: "{{ app_dir }}"
+
+state: present
+
+restarted: yes
+
+- name: Prune old images
+
+community.docker.docker_prune:
+
+containers: yes
+
+images: yes
+
+
+networks: yes
+
+volumes: yes

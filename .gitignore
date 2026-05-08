@@ -1,0 +1,102 @@
+gitignore
+
+# =============================================
+
+# KONKER – .gitignore
+
+# Generated: November 12, 2025 12:27 AM EAT
+
+
+## # =============================================
+
+# Node
+
+node_modules/
+
+npm-debug.log
+
+yarn-error.log
+
+pnpm-debug.log
+
+# Build
+
+dist/
+
+build/
+
+.vite/
+
+.next/
+
+.turbo/
+
+# Environment
+
+.env
+
+.env.local
+
+.env.*.local
+
+# Docker
+
+docker-compose.override.yml
+
+*.log
+
+
+## # OS
+
+.DS_Store
+
+Thumbs.db
+
+# Editor
+
+.vscode/
+
+.idea/
+
+*.swp
+
+*.swo
+
+# Terraform
+
+.terraform/
+
+*.tfstate
+
+*.tfstate.backup
+
+*.tfvars
+
+# Backups
+
+/backups/
+
+# SSL (self-signed)
+
+nginx/ssl/*.key
+
+nginx/ssl/*.crt
+
+# Helm
+
+
+helm/charts/**/templates/*.generated.yaml
+
+File 46 / 49
+
+nginx/ssl/letsencrypt/ – Directory for Let's Encrypt (Production SSL)
+
+Directory Structure Only
+
+text
+
+nginx/ssl/letsencrypt/
+
+├── README.md
+
+└── .gitkeep
