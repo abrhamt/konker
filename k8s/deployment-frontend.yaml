@@ -1,0 +1,66 @@
+# =============================================
+
+# KONKER – Frontend Deployment
+
+# Generated: November 12, 2025 12:24 AM EAT
+
+# =============================================
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+name: konker-frontend
+
+namespace: konker
+
+spec:
+
+replicas: 1
+
+selector:
+
+matchLabels:
+
+app: konker
+
+component: frontend
+
+template:
+
+
+metadata:
+
+labels:
+
+app: konker
+
+component: frontend
+
+spec:
+
+containers:
+
+- name: frontend
+
+image: konker/frontend:latest
+
+ports:
+
+- containerPort: 80
+
+resources:
+
+requests:
+
+cpu: "100m"
+
+memory: "128Mi"
+
+limits:
+
+cpu: "200m"
+
+memory: "256Mi"

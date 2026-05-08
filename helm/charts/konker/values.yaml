@@ -1,0 +1,76 @@
+# =============================================
+
+# KONKER – Helm Values
+
+# Generated: November 12, 2025 12:24 AM EAT
+
+# =============================================
+
+replicaCount: 2
+
+image:
+
+repository: konker/backend
+
+tag: "latest"
+
+pullPolicy: Always
+
+frontend:
+
+repository: konker/frontend
+
+
+tag: "latest"
+
+env:
+
+MYSQL_URL: "mysql://konker_user:{{ .Values.secrets.mysqlPassword
+}}@mysql:3306/konker_db"
+
+REDIS_URL: "redis://default:{{ .Values.secrets.redisPassword }}@redis:6379"
+
+JWT_SECRET: "{{ .Values.secrets.jwtSecret }}"
+
+secrets:
+
+mysqlPassword: "konkerpass2025"
+
+redisPassword: "redispass2025"
+
+jwtSecret: "konker-jwt-secret-2025"
+
+service:
+
+type: ClusterIP
+
+port: 3001
+
+ingress:
+
+enabled: true
+
+className: "nginx"
+
+hosts:
+
+- host: konker.et
+
+paths:
+
+- path: /
+
+pathType: Prefix
+
+
+- path: /socket.io
+
+pathType: Prefix
+
+tls:
+
+- secretName: konker-tls
+
+hosts:
+
+- konker.et

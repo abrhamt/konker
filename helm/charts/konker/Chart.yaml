@@ -1,0 +1,40 @@
+# =============================================
+
+# KONKER – Helm Chart
+
+# Generated: November 12, 2025 12:24 AM EAT
+
+# =============================================
+
+apiVersion: v2
+
+name: konker
+
+description: Ethiopian Rummy 41 - Full Stack
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.0.0"
+
+maintainers:
+
+- name: Konker Team
+
+email: dev@konker.et
+
+home: https://konker.et
+
+icon: https://konker.et/logo.svg
+
+keywords:
+
+
+- game
+- rummy
+- multiplayer
+
+sources:
+
+- https://github.com/konker/konker
