@@ -23,31 +23,48 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
+            max-width: 900px;
             padding: 40px;
-            text-align: center;
         }
         h1 {
             color: #333;
             margin-bottom: 10px;
             font-size: 2.5em;
+            text-align: center;
         }
         .subtitle {
             color: #667eea;
             font-size: 1.2em;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
-        p {
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .section {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .section p {
             color: #666;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         .links {
-            margin-top: 30px;
             display: flex;
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 30px;
         }
         a {
             display: inline-block;
@@ -57,10 +74,13 @@
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            text-align: center;
         }
         a:hover {
             background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
         .github-link {
             background: #333;
@@ -68,18 +88,85 @@
         .github-link:hover {
             background: #555;
         }
+        .game-link {
+            background: #22c55e;
+        }
+        .game-link:hover {
+            background: #16a34a;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .badge {
+            background: #e0e7ff;
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .game-info {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            color: #92400e;
+        }
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🃏 Konker</h1>
-        <div class="subtitle">Ethiopian Rummy 41</div>
-        <p>Welcome to Konker, an authentic implementation of the Ethiopian card game Rummy 41 (Konker).</p>
-        <p>A real-time multiplayer game built with modern web technologies.</p>
+        <div class="subtitle">Ethiopian Rummy 41 - Real-time Multiplayer Card Game</div>
         
+        <div class="content">
+            <div class="section">
+                <h2>About Konker</h2>
+                <p>Konker is an authentic digital implementation of the traditional Ethiopian card game, Rummy 41 (Konker).</p>
+                <p>Play in real-time with friends, master strategic card play, and experience the classic game in a modern web environment.</p>
+                <div class="tech-stack">
+                    <span class="badge">React</span>
+                    <span class="badge">Node.js</span>
+                    <span class="badge">Socket.io</span>
+                    <span class="badge">MySQL</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>How to Play</h2>
+                <p><strong>Goal:</strong> Be the first to meld all cards with a minimum of 41 points.</p>
+                <p><strong>Setup:</strong> Dealt 13 cards (dealer gets 14). Form sequences or groups.</p>
+                <p><strong>Win Conditions:</strong> Standard Win or Doobie Win with special rules.</p>
+                <p><strong>Turn Limit:</strong> 60 seconds per turn.</p>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <strong>🎮 Game Features:</strong>
+            <p style="margin-top: 8px;">Real-time multiplayer • Server-validated moves • Authentic game rules • 60-second turn timers • Room codes for easy joining • Player statistics & history</p>
+        </div>
+
         <div class="links">
-            <a href="https://github.com/abrhamt/konker" class="github-link">📚 View on GitHub</a>
-            <a href="#play">Learn More</a>
+            <a href="https://github.com/abrhamt/konker" class="github-link">📚 View Source Code</a>
+            <a href="https://github.com/abrhamt/konker#readme" class="github-link">📖 Read Documentation</a>
+            <a href="https://github.com/abrhamt/konker/issues" class="github-link">🐛 Report Issues</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #999; font-size: 0.9em;">
+            <p>Built with ❤️ • <a href="https://github.com/abrhamt" style="color: #999; text-decoration: underline;">@abrhamt</a></p>
+            <p>Game Rules based on Ethiopian Konker traditions</p>
         </div>
     </div>
 </body>
