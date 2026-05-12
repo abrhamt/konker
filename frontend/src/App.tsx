@@ -46,6 +46,7 @@ function App() {
               <input
                 type="text"
                 placeholder="Enter your name"
+                aria-label="Enter your name"
                 value={playerName}
                 onChange={(e) => setPlayerName(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && playerName && setGameStarted(true)}
@@ -54,6 +55,7 @@ function App() {
               <button
                 onClick={() => setGameStarted(true)}
                 disabled={!playerName.trim()}
+                title={!playerName.trim() ? "Please enter your name to start" : undefined}
                 className="play-button"
               >
                 <Play size={20} />
