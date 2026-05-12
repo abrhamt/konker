@@ -99,6 +99,7 @@ function GameBoard({ playerName, onExit }: GameBoardProps) {
                 <button
                   key={i}
                   className={`card ${selectedCards.includes(i) ? 'selected' : ''}`}
+                  aria-pressed={selectedCards.includes(i)}
                   onClick={() => toggleCard(i)}
                 >
                   {card}
@@ -111,6 +112,7 @@ function GameBoard({ playerName, onExit }: GameBoardProps) {
             <button
               onClick={playCards}
               disabled={selectedCards.length === 0}
+              title={selectedCards.length === 0 ? "Select cards to play" : undefined}
               className="play-btn"
             >
               Play Selected ({selectedCards.length})
