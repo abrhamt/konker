@@ -100,6 +100,7 @@ function GameBoard({ playerName, onExit }: GameBoardProps) {
                   key={i}
                   className={`card ${selectedCards.includes(i) ? 'selected' : ''}`}
                   onClick={() => toggleCard(i)}
+                  aria-pressed={selectedCards.includes(i)}
                 >
                   {card}
                 </button>
