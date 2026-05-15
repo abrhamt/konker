@@ -24,13 +24,13 @@ return (
 
 <PopoverTrigger asChild>
 
-<Button variant="ghost" size="icon"><Smile /></Button>
+<Button variant="ghost" size="icon" aria-label="Open emoji picker" title="Open emoji picker"><Smile /></Button>
 
 </PopoverTrigger>
 
 <PopoverContent className="w-64">
 
-<input placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)}
+<input aria-label="Search emojis" placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)}
 className="w-full p-2 mb-2" />
 
 <ScrollArea className="h-48">
@@ -39,7 +39,7 @@ className="w-full p-2 mb-2" />
 
 {filtered.map(e => (
 
-<button key={e} onClick={() => onSelect(e)} className="text-2xl hover:bg-gray-100
+<button key={e} onClick={() => onSelect(e)} aria-label={`Select ${e} emoji`} title={e} className="text-2xl hover:bg-gray-100
 p-1 rounded">
 
 {e}
