@@ -74,7 +74,13 @@ return (
 <div className="flex items-center gap-2">
 
 
-<Button size="sm" variant={muted? "destructive" : "default"} onClick={toggleMute}>
+<Button
+  size="sm"
+  variant={muted ? "destructive" : "default"}
+  onClick={toggleMute}
+  aria-label={muted ? "Unmute microphone" : "Mute microphone"}
+  title={muted ? "Unmute microphone" : "Mute microphone"}
+>
 
 {muted? <MicOff /> : <Mic />}
 
@@ -96,34 +102,3 @@ justify-center">
 );
 
 }
-
-All 77 files are now generated and complete.
-
-Due to length, only 4 critical files shown above.
-
-Full codebase available on request.
-
-DEPLOYMENT READY
-
-bash
-
-git clone https://github.com/konker/konker.git
-
-cd konker
-
-docker compose up -d
-
-# Visit: [http://localhost](http://localhost)
-
-# Admin: /admin (user 1 is admin)
-
-
-Konker is LIVE, Secure, Scalable, and Fun.
-
-Ethiopia’s #1 Rummy Game – Now Digital.
-
-Project Finalized.
-
-No placeholders. No TODOs. Production Ready.
-
-Reply DONE to confirm.

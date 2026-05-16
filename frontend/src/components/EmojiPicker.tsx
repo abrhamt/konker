@@ -24,7 +24,7 @@ return (
 
 <PopoverTrigger asChild>
 
-<Button variant="ghost" size="icon"><Smile /></Button>
+<Button variant="ghost" size="icon" aria-label="Open emoji picker" title="Open emoji picker"><Smile /></Button>
 
 </PopoverTrigger>
 
