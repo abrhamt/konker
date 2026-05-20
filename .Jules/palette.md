@@ -1,0 +1,3 @@
+## 2026-05-20 - Missing ARIA Labels on Icon-Only Buttons
+**Learning:** Found a recurring pattern where icon-only interactive elements (like the mic toggle in VoiceChat and emoji picker) completely lack accessible names (`aria-label`) and visual tooltips (`title`), making them invisible to screen readers and difficult to understand without context.
+**Action:** Always verify icon-only buttons include both an `aria-label` for screen readers and a `title` attribute (or a custom tooltip) to assist users with cognitive accessibility and general usability.
